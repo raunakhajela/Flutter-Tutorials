@@ -12,6 +12,15 @@ class MyApp extends StatefulWidget {
 }
 
 class _State extends State<MyApp>{
+
+  String _value = 'Hello World';
+
+  void _onPressed(String value) {
+    setState(() {
+      _value = value;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
@@ -24,7 +33,9 @@ class _State extends State<MyApp>{
         child: new Center(
           child: new Column(
             children: <Widget>[
-              new Text('Hello world!')
+              new Text(_value),
+              //dart treates everything as objects so we pass a function in onPressed value
+              new RaisedButton(onPressed: () => _onPressed('Hello Raunak'), child: new Text('Click me')),
             ],
           ),
         ),
