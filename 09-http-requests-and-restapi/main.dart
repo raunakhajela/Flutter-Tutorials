@@ -26,13 +26,13 @@ class HomePageState extends State<HomePage> {
       Uri.encodeFull("https://jsonplaceholder.typicode.com/posts"),
       headers: {
         //if your api require key then pass your key here as well e.g "key": "my-long-key"
-       "Accept": "application/json" 
+       "Accept": "application/json"
       }
     );
 
     //print(response.body);
 
-    List data = JSON.decode(response.body);
+    List data = json.decode(response.body);
     //print(data);
     print(data[1]["title"]); // it will print => title: "qui est esse"
   }

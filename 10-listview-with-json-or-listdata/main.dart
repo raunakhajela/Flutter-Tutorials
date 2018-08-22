@@ -28,11 +28,11 @@ class HomePageState extends State<HomePage> {
     );
 
     this.setState(() {
-      data = JSON.decode(response.body);
+      data = json.decode(response.body);
     });
-    
+
     print(data[1]["title"]);
-    
+
     return "Success!";
   }
 
